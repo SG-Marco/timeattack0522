@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main Page</title>
+    <script src="api.js"></script>
+    <script src="index.js"></script>
+    <script>
+        function send_pic() {
+            $.ajax({
+                type: "POST",
+                url: "//cat_dog",
+                let file = $('#file')[0].files[0];
+                let form_data = new FormData();
+                form_data.append("file_give", file);                success: function (response) {
+                success: function (response) {
+                        cat_dog= response['result']
+                    }
+                }
+            })
+        }
+    </script>
+  </head>
+  <body>
+      <input type="">
+    <button type="button" onclick="send_pic()">
+      개?고양이?
+    </button>
+
+    <ol id="articles"></ol>
+  </body>
+</html>
